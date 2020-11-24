@@ -1,22 +1,5 @@
 var i;
 
-function preloader(){
-    setTimeout(function(){
-		var num = 100;
-		var Interval = setInterval(opacidad, 5);
-		var preloader = document.getElementById('preloader');
-		function opacidad(){
-			if(num <= 0){
-				clearInterval(Interval);
-				preloader.style.display = 'none';
-			} else {
-				num--;
-				preloader.style.height = num + '%';
-			}
-		}
-    }, 10)
-}
-// preloader();
 
 function navegacion(evt, ventana, header, activeLink){
 	var ventanas = document.getElementsByClassName('ventanas');

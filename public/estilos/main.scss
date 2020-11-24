@@ -1,0 +1,86 @@
+:root {
+    --white-color: #ddd;
+    --black-color: #111;
+    --light-color: #fd0038;
+    --light-color: #f90017;
+
+    --font-s-small: .8rem;
+    --font-s-medium: 1rem;
+    --font-s-large: 1.3rem;
+    --font-s-extraLarge: 4.5rem;
+}
+
+@mixin flexCenterCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin flexAroundCol{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin flexBetweenCol{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin flexCenterRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+@mixin flexAroundRow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+@mixin flexBetweebRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+@import 'src/menu', 'src/mainBanner';
+
+
+
+.scrollRight{
+    position: relative;
+    color: #0f0;
+    transition: 1s;
+}
+
+
+
+.position {
+	animation: transladar 0.5s;
+	transition: 1.5s;
+	opacity: 1;
+}
+@keyframes transladar {
+	from{transform: translateX(-800px)}
+	to{transform: translateX(0)}
+}
+.positionright {
+	animation: transladarright 0.5s;
+	transition: 1.5s;
+	opacity: 1;
+}
+@keyframes transladarright {
+	from{transform: translateX(800px)}
+	to{transform: translateX(0)}
+}
+.light-c{
+    color: var(--light-color);
+    color: linear-gradient(#f00, #fff);
+}
+.b-shadow{
+    box-shadow: .1rem .3rem .6rem #111;
+    padding: 0 .2rem;
+}
