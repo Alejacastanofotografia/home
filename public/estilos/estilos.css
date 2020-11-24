@@ -118,7 +118,7 @@ header {
 	}
 }
 .h1Main span:nth-child(even){
-	color: #ff0000;
+	color:var(--light-color);
 }
 .fraseHome {
 	width: 100%;

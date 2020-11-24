@@ -7,7 +7,7 @@
     --font-s-small: .8rem;
     --font-s-medium: 1rem;
     --font-s-large: 1.3rem;
-    --font-s-extraLarge: 4.5rem;
+    --font-s-extraLarge: 4rem;
 }
 
 @mixin flexCenterCol{
@@ -77,10 +77,10 @@
 	to{transform: translateX(0)}
 }
 .light-c{
-    color: var(--light-color);
-    color: linear-gradient(#f00, #fff);
+    // color: var(--black-color);
+    // text-shadow: .1rem .3rem .2rem var(--white-color);
 }
 .b-shadow{
-    box-shadow: .1rem .3rem .6rem #111;
+    // box-shadow: .1rem .3rem .6rem #111;
     padding: 0 .2rem;
 }
