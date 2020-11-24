@@ -1,0 +1,1111 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta 	name="viewport" content="width = device-width, initial-scale = 1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Aleja Castaño Fotografía</title>
+	<link rel="shortcut icon" type="image/x-icon"href="favicon.ico"/>	
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon"href="favicon.ico"/>	
+	<link rel="icon" type="image/x-icon"href="favicon.ico"/>	
+	<link rel="stylesheet" href="estilos/estilos.css" >
+    <link rel="stylesheet" href="estilos/book.css" async>
+    <link rel="stylesheet" href="estilos/galerias.css" async>
+    <link rel="stylesheet" href="estilos/admin.css" async>
+	<link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet' async>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
+</head>
+<body onload="consultaCantidad()">
+    <header id="header">
+	    <div class="slider" id="imgSlider" >
+	        <div class="imgagenesSlider">
+			    <picture>
+				    <source srcset="Imagenes/Nslider/media/img1.jpg" media="(max-width: 600px)">
+				    <source srcset="Imagenes/Nslider/media/img1.jpg" type="image/webp">
+		            <img  class="itemImg" src="Imagenes/Nslider/img1.jpg" alt="Retratos" title="Retratos">
+				</picture>
+	     	</div>
+	        <div class="imgagenesSlider">
+			    <picture>
+				    <source srcset="Imagenes/Nslider/media/img2.jpg" media="(max-width: 600px)">
+				    <source srcset="Imagenes/Nslider/media/img3.jpg" type="image/webp">
+		            <img  class="itemImg" src="Imagenes/Nslider/img3.jpg" alt="Retratos" title="Retratos">
+				</picture>
+	    	</div>
+	        <div class="imgagenesSlider">
+			    <picture>
+				    <source srcset="Imagenes/Nslider/media/img3.jpg" media="(max-width: 600px)">
+				    <source srcset="Imagenes/Nslider/media/img2.jpg" type="image/webp">
+		            <img  class="itemImg" src="Imagenes/Nslider/img2.jpg" alt="Retratos" title="Retratos">
+				</picture>
+		    </div>
+	        <div class="imgagenesSlider">
+			    <picture>
+				    <source srcset="Imagenes/Nslider/media/img4.jpg" media="(max-width: 600px)">
+				    <source srcset="Imagenes/Nslider/media/img4.jpg" type="image/webp">
+		            <img  class="itemImg" src="Imagenes/Nslider/img4.jpg" alt="Retratos" title="Retratos">
+				</picture>
+		    </div>
+
+
+
+	   <!--titulo y menu en absolute">-->
+	        <div class="afterimgSlider"></div>
+	    </div>	
+		<nav>
+		    <div class="contenedorSlider" >
+			    <div class="items" >
+				    <li id="navInicio" class="tabs" onclick="navegacion(event, 'principal', false, 'navInicio'); window.scroll(10,800)">
+				    	<a class='fas'>&#xf015; <span id="textoInicio">Inicio</span></a>
+					</li>
+				</div>
+		        <div class="items"  >
+			        <li id="navBooks"class="tabs" onclick="navegacion(event, 'book', true, 'navBooks'); window.scroll(0,0)">
+					    <a href="#">Books</a>
+				    </li>  
+		     	</div>
+		        <div class="items" >
+			        <li id="navSesiones" class="tabs" onclick="navegacion(event, 'Galerias', true, 'navSesiones'); window.scroll(0,0)" >
+					    <a href="#">Sesiones</a>
+					</li>  
+			    </div>
+		        <h1 class="h1Main tabs"  id="defaultClick" onclick="navegacion(event, 'principal', false, 'navInicio'); window.scroll(0,0)">Aleja Castaño<br>
+		            <span>F</span>
+		            <span>o</span>
+		            <span>t</span>
+		            <span>o</span>
+		            <span>g</span>
+		            <span>r</span>
+		            <span>a</span>
+		            <span>f</span>
+		            <span>í</span>
+		            <span>a</span>
+		        </h1>
+		        <div class="items" >
+			        <li id="navSobreMi"class="tabs"onclick="navegacion(event, 'principal', false, 'navSobreMi')">
+					    <a href="#sobreMi" id="linkSobreMi">Sobre Mí</a>
+					</li>  
+			    </div>
+		        <div class="items" >
+			        <li id="navContacto"class="tabs"onclick="navegacion(event, 'principal', false, 'navContacto')">
+					    <a href="#contacto">Contacto</a>
+					</li>  
+			    </div>
+			    <div class="items" onclick="abrirMenuLogin()" >
+				    <li class=" tabs" style="display: flex; justify-content: center; align-items: center">
+					    <p class="nombreUsuariomenu"><span id="nombreUsuariomenu"></span><i  class='fas'>&#xf2bd;</i></p>
+					   	<a class="material-icons">&#xe5d2;</a>
+					</li>
+				</div>
+		    </div>
+			
+	       <div class="menuLogin" >
+			        <button class="cerrarLogin"onclick="abrirMenuLogin()">X</button>
+				    <form id="formularioLogin">
+         					<h4 class="tituloLogin">Iniciar sesión<i  class='fas iconUser'>&#xf2bd;</i></h4><br>
+			                <p >
+				              Inicia sesión para visualizar tus fotografías y descargarlas.
+				            </p>
+					    <input type="text"  placeholder="Usuario" id="usuario">
+					    <input type="password"  placeholder="Contraseña" id="documento">
+						<button class="botones">Iniciar</button>
+				        <p id="mensajesFormularioLogin"></p>
+				    </form>
+					
+					<div class="menuLogout">
+					    <h5 class="tituloLogin"><span id="nombreUsuarioTitulo"></span><i  class='fas iconUser'>&#xf2bd;</i></h5><br>
+				        <p id="mensajeBienvenida"></p>
+						   <a class="enlaceDescargar" href="https://drive.google.com/drive/folders/12eDtPMPl0tAvTjRSUeE95uuYlmzdzk2J?usp=sharing" target="_blank">
+						       Descargalas Aquí.
+						   </a>
+				        <button class="botones" onclick="location.reload()">Cerrar Sesión</button>
+					</div>
+			        <button id="buttonAdmin"class="botones" onclick="navegacion(event, 'Admin', 'noHead', 'navSesiones')" >Admin</button>
+			</div>	
+				
+		</nav>
+    </header>
+	
+	<section class="ventanas" id="principal">
+		<div   class="fraseHome">
+			<p class="frasehomeP">
+			<i>Solo </i><i>basta </i><i>un </i><i>clic </i><i>para </i><i>inmortalizar </i><i>los </i><i>momentos </i>
+			<i>más </i><i>especiales </i><i>de </i><i>tu </i><i>vida.</i>
+			</p>
+		</div>
+		<div class="contenidos" id="abc">
+			<div   class="contenidoMain contenidoScroll">
+			</div>
+			<div class="contenidoMain scrollRight">
+				 <div class="afterContenedores">   
+					<p class="parrafos">Retrato tus momentos especiales, atenta a cada detalle que asegure maravillosos recuerdos plasmados en cada
+					fotografía.</p>
+				</div>	
+			</div>
+			<div   class="contenidoMain contenidoScroll">
+			</div>
+			<div class="contenidoMain contenidoScroll">
+				<div class="afterContenedores">
+				   <p class="parrafos"> Con mi cámara me aseguro de capturar los momentos mas increíbles de tu vida para que los conserves por siempre.</p>
+				</div>
+			</div>
+			<div   class="contenidoMain scrollRight">	
+			</div>
+		</div>
+		
+		<div class="c360 " id="c360">
+			<div   class="c360Item contenidoScroll" id="Imagen360">
+			</div>
+			<div class="c360Item">
+				 
+				<div class="afterContenedores scrollRight">
+					<h2 class="titulos">Fotografía 360° <div  class='fas logo360'>&#xf0ac;</div> </h2>
+					<p class="parrafos">
+						Una experiencia única para conservar los
+						momentos más especiales de tu vida en increíbles fotografías
+						360 grados y panorámicas 180, para que ningún detalle se escape.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="contenidoSobreMi" id="sobreMi">
+			<div class="contenidoSobreMiItem scrollRight">
+			</div>
+			<div class="contenidoSobreMiItem contenidoScroll">
+			</div>
+			<div class="contenidoSobreMiItem ">
+			    <div class="afterContenedores">
+					<h2 class="titulos">Sobre mí</h2>
+					<p class="parrafos">
+						Soy Comunicadora Audiovisual, apasionada por la fotografía, 
+						la cual es para mí una manera de conservar la memoria y viajar en el tiempo 
+						hasta el pasado, para recordar los momentos bonitos que marcaron nuestras vidas.
+					</p>
+				</div>	
+			</div>  
+			<div class="contenidoSobreMiItem scrollRight">
+			</div>
+			<div class="contenidoSobreMiItem contenidoScroll">
+			</div>
+		</div>
+		<div class="contacto " id="contacto">
+			<div class="contactoItem contenidoScroll">
+					<img   data-src="Imagenes/Fondos/img7.jpg" class="lazyload">
+			</div>
+			<div class="contactoItem">
+				<form id="formularioContacto" class="scrollRight">
+					<div class="afterContenedores">
+						<h2 class="titulos">Contacto</h2>
+						<p class="parrafos">
+							 Puedes contactarme a través de mis redes sociales o ingresar tus datos en el siguiente formulario.
+						</p>
+					</div>	
+					<input type="text" placeholder="Nombre" name="name" id="name">
+					<input type="text" placeholder="Teléfono" name="telefono" id="telefono">
+					<input type="email" placeholder="Correo" name="email" id="email">
+					<textarea placeholder="Agrega una breve descripción de tu evento." name="Comentarios" id="mensaje"></textarea> <br>
+					
+					<p id="mensajesFormularioGrave"></p>
+					<p id="mensajeExitoso"></p><br>
+					<p id="mensajesFormulario"></p>
+					
+					<button type="submit" class="botones">Enviar</button>	
+				</form>
+			</div>
+		</div>
+		</section>
+	<!--Efecto Book-->
+	<section id="book" class="ventanas" >
+	<div class="contenedorBook">
+       <div class="tituloParrafo">
+	        <div class="afterContenedores">
+               <h2 class="titulos">Photobook</h2>
+               <p class="parrafos" >Inmortaliza tus sesiones con hermosos <br>photobooks personalizados.</p>
+            </div>			   
+		  <table>
+		      <tr>
+			      <th>Medida</th>
+			      <th>Orientación</th>
+			      <th>Referencia</th>
+		      </tr>
+			   <tr>
+			      <td>20x26</td>
+			      <td>Vertical</td>
+			      <td onclick="document.getElementById('dim1').click()" ><img   data-src="Imagenes/Iconos/iconovertical.jpg" class="lazyload"style="width:30px; height:39px; object-fit:cover; border:2px solid #909090" ></td>
+			  </tr>
+			  <tr>
+			      <td>26x20</td>
+			      <td>Horizontal</td>
+			      <td onclick="document.getElementById('dim2').click()"  ><img   data-src="Imagenes/Iconos/iconohorizontal.jpg" class="lazyload"style="width:39px; height:30px; object-fit:cover; border:2px solid #909090"></td>
+			  </tr>
+			 
+			  <tr>
+			      <td>30X40</td>
+			      <td>Vertical</td>
+				  <td onclick="document.getElementById('dim3').click()" ><img   data-src="Imagenes/Iconos/iconovertical.jpg" class="lazyload" style="width:35px; height:46px; object-fit:cover; border:2px solid #909090" ></td>
+			  </tr>
+		  </table>
+       </div > 
+	<div class="booksContainer"> 	
+    <div id="libroComunion" >	   
+	   <div class="container" >
+		    <div class="cover">
+			    <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img25.jpg" media="(max-width: 600px)" >
+		            <img   class="front lazyload" data-src="Imagenes/EfectoBook/img25.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img26.jpg" media="(max-width: 600px)">
+		            <img  class="backl lazyload" data-src="Imagenes/EfectoBook/img26.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>
+			<div class="cover2">
+			    <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img23.jpg" media="(max-width: 600px)" >
+		            <img   class="front2 lazyload" data-src="Imagenes/EfectoBook/img23.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img24.jpg" media="(max-width: 600px)">
+		            <img  class="back2 lazyload" data-src="Imagenes/EfectoBook/img24.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>
+			<div class="cover3">
+			    <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img9.jpg" media="(max-width: 600px)" >
+		            <img   class="front3 lazyload" data-src="Imagenes/EfectoBook/img9.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/img22.jpg" media="(max-width: 600px)">
+		            <img  class="back3 lazyload" data-src="Imagenes/EfectoBook/img22.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>
+			
+        </div>
+	</div>
+	
+	<!-- nuevos estilos -->
+	<div id="libroInfantil"  >	   
+	   <div class="containerh" >
+		   <div class="coverInfant">
+			    <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv5.jpg" media="(max-width: 600px)" >
+		            <img   class="frontInfant lazyload" data-src="Imagenes/EfectoBook/Iimgv5.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv6.jpg" media="(max-width: 600px)">
+		            <img  class="backInfant lazyload" data-src="Imagenes/EfectoBook/Iimgv6.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>
+			<div class="cover2">
+			    <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv3.jpg" media="(max-width: 600px)" >
+		            <img   class="frontInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv3.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv4.jpg" media="(max-width: 600px)">
+		            <img  class="backInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv4.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>
+			<div class="cover3">
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv1.jpg" media="(max-width: 600px)" >
+		            <img   class="lazyload" data-src="Imagenes/EfectoBook/Iimgv1.jpg" alt="books" title="Retratos">
+			    </picture>
+		        <picture>
+				    <source srcset="Imagenes/EfectoBook/media/Iimgv2.jpg" media="(max-width: 600px)">
+		            <img  class="backInfant3 lazyload" data-src="Imagenes/EfectoBook/Iimgv2.jpg" alt="books" title="Retratos">
+			    </picture>
+			</div>  
+					
+       </div>
+	</div>
+		
+	<nav class="navegacionBooks">
+	    <ul>
+		    <li class="activemedidas" onclick="bookInfantil(event)" id="dim1">20x26</li>
+		    <li class="activemedidas" onclick="bookComunion(event)" id="dim2">26x20</li>
+		    <li class="activemedidas" onclick="bookInfantilDimensiones(event)" id="dim3">30x40</li>
+		</ul>
+	</nav>
+	</div> 
+</div>   
+</section>
+	<!--Efecto Book-->
+	<section id="Galerias" class="ventanas">
+	    <nav id="menuGalerias">
+		    <div class="menuGaleriasAfter"	>
+            <ul>
+			    <h3 class="galeriasH">Sesiones</h3>
+				<!-- prueba con js -->
+				<li class="tablinks2 userSesion" onclick="cambiarVentana2(event, 'Usuarioslogeados')">
+				    <div class="contenedorMenusUser">
+					    <i  class='fas iconUser'>&#xf2bd;</i><input type="button" class="nameUser">
+					</div>	
+				</li>
+				<!-- sesiones de los usuarios -->
+				
+			    <li class="tablinks2 " onclick="cambiarVentana2(event, 'adulto')">Retrato Adulto</li>
+			    <li class="tablinks2 " onclick="cambiarVentana2(event, 'infantil')" id="defaultOpen2">Retrato Infantil</li>
+			    <li class="tablinks2" onclick="cambiarVentana2(event, 'primeraComunion')">Primera Comunión</li>
+			    <li class="tablinks2" onclick="cambiarVentana2(event, 'boda')">Boda</li>
+			    <li class="tablinks2" onclick="cambiarVentana2(event, 'Prequinces')">Prequinces</li>
+			    <li class="tablinks2" onclick="cambiarVentana2(event, 'Quinces')">Quinces</li>
+			    <li class="tablinks2" onclick="cambiarVentana2(event, 'Colecciones')">Colecciones</li>
+		    </ul>	
+            </div>			
+        </nav>
+		<nav class="navMovil">
+		    <ul> 
+		        <li >
+				    <a  id="retratosMovil" class="opcionesMovil"><img  data-src="Imagenes/Iconos/retratosicon.png" class="lazyload">Retratos</a>
+				    <ul>
+					    <li><a  onclick="cambiarVentana3(event, 'infantil', 'retratosMovil')">Retrato infantil</a></li>
+					    <li><a  onclick="cambiarVentana3(event, 'adulto' , 'retratosMovil')">Retrato Adulto</a></li>
+						<!-- sesiones de los usuarios -->
+					    <li class="userSesion">
+						    <a onclick="cambiarVentana2(event, 'Usuarioslogeados', 'retratosMovil')" >
+				                <div class="contenedorMenusUser">
+					                 <i  class='fas iconUser'>&#xf2bd;</i><input type="button" class="nameUser">
+					            </div>	
+						    </a>
+						</li>
+                        <!-- fin sesiones de los usuarios				    -->
+				   </ul>
+				</li>
+		        <li >
+				    <a id="quincesMovil" class="opcionesMovil"><img  data-src="Imagenes/Iconos/15.png" class="lazyload">Quinces</a>
+				    <ul>
+					    <li><a  onclick="cambiarVentana3(event, 'Prequinces', 'quincesMovil')">Prequinces</a></li>
+					    <li><a  onclick="cambiarVentana3(event, 'Quinces', 'quincesMovil')" >Quinces</a></li>
+				    </ul>				   
+				</li>
+		        <li ><a id="bodaMovil" class="opcionesMovil" onclick="cambiarVentana3(event, 'boda', 'bodaMovil')"><img  data-src="Imagenes/Iconos/anillosicon.png" class="lazyload">Boda</a></li>
+		        <li ><a id="comunionMovil" class="opcionesMovil"onclick="cambiarVentana3(event, 'primeraComunion', 'comunionMovil')"><img  data-src="Imagenes/Iconos/comunionicon.png" class="lazyload">Comunión</a></li>
+		        <li ><a id="coleccionesMovil" class="opcionesMovil" onclick="cambiarVentana3(event, 'Colecciones', 'coleccionesMovil')"><img  data-src="Imagenes/Iconos/paisajeicon.png" class="lazyload">Colecciones</a></li>
+	    	</ul>
+		</nav>			
+	      	<!--++++++++++++++Menu para moviles+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<section id="infantil" class="galerias Ventanas2">
+	 <article>
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write1"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeriaV">
+	    <li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img1.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img1.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img2.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img2.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img3.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img3.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img4.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img4.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img5.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img5.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img6.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img6.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img7.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img7.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img8.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img8.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img9.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img9.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img10.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img10.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img11.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img11.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img12.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img12.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img13.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img13.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img14.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img14.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		<li>
+			<a href="#" onclick="abrirlight('lightInfantil');document.getElementById('imgInfantil').src = 'Imagenes/Galerias/Infantil/img15.jpg'">							
+				<img    data-src="Imagenes/Galerias/Infantil/img15.jpg" class="lazyload">
+				<div class="new" ></div>
+			</a>
+		</li>
+		
+	</ul>
+    <!-- *************************************************************************************************** -->
+    <div id="lightInfantil">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiainfantil">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="15" id="intantilTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightInfantil'); Stopfotos()">X</p>
+		    <div class="imagenLight">
+				<img id="imgInfantil"src="" onclick="next('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil')">
+			</div>
+		<div class="back" onclick="prev('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgInfantil', 'intantilTotal', 'indexcambiainfantil', 'carpetaInfantil'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Infantil" id="carpetaInfantil">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('intantilTotal', 'imgInfantil')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()" >&#xf04c;</i></li>		
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>
+	</div>
+
+	</article>
+	 </section>      		
+	<section id="primeraComunion" class="galerias Ventanas2">
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write2"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeria">
+	    <li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img1.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img1.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img2.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img2.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img3.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img3.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img4.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img4.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img5.jpg'" >
+			 <img    data-src="Imagenes/Galerias/Pcomunion/img5.jpg" class="lazyload"><div class="new" ></div>
+			</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img6.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img6.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img7.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img7.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img8.jpg'" >
+			 <img    data-src="Imagenes/Galerias/Pcomunion/img8.jpg" class="lazyload"><div class="new" ></div>
+			</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img9.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img9.jpg" class="lazyload"><div class="new" ></div>
+		</a></li>
+		<li><a onclick="abrirlight('lightComunion');document.getElementById('imgComunion').src = 'Imagenes/Galerias/Pcomunion/img10.jpg'" >
+			<img    data-src="Imagenes/Galerias/Pcomunion/img10.jpg" class="lazyload"><div class="new" ></div
+				></a></li>
+		
+	
+	</ul>
+    <!-- *************************************************************************************************** -->
+    <div id="lightComunion">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaComunion">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="10" id="ComunionTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightComunion'); Stopfotos()">X</p>
+		    <div class="imagenLightHori">
+				<img  id="imgComunion"src="" onclick="next('imgComunion', 'ComunionTotal', 'indexcambiaComunion', 'carpetaComunion')">
+			</div>
+		<div class="back" onclick="prev('imgComunion', 'ComunionTotal', 'indexcambiaComunion', 'carpetaComunion'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgComunion', 'ComunionTotal', 'indexcambiaComunion', 'carpetaComunion'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Pcomunion" id="carpetaComunion">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('ComunionTotal', 'imgComunion')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>  	
+	</div>
+  
+	<!-- ********************************************************************* -->
+    </section>
+	<section id="Prequinces" class="galerias Ventanas2">
+	<article >
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write3"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeria">
+	    <li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img1.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img2.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img3.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img4.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img5.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img6.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img7.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img8.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img9.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img9.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a onclick="abrirlight('lightPrequinces');document.getElementById('imgPrequinces').src = 'Imagenes/Galerias/Prequinces/img10.jpg'" >
+	        <img    data-src="Imagenes/Galerias/Prequinces/img10.jpg" class="lazyload"><div class="new" ></div></a></li>
+    <!-- *************************************************************************************************** -->
+    <div id="lightPrequinces">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaPrequinces">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="10" id="PreqincesTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightPrequinces'); Stopfotos()">X</p>
+		    <div class="imagenLightHori">
+				<img id="imgPrequinces"src="" onclick="next('imgPrequinces', 'PreqincesTotal', 'indexcambiaPrequinces', 'carpetaPrequinces')">
+			</div>
+		<div class="back" onclick="prev('imgPrequinces', 'PreqincesTotal', 'indexcambiaPrequinces', 'carpetaPrequinces'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgPrequinces', 'PreqincesTotal', 'indexcambiaPrequinces', 'carpetaPrequinces'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Prequinces" id="carpetaPrequinces">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('PreqincesTotal', 'imgPrequinces')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>  
+	</div>
+	
+
+	</article>
+	</section>
+	<section id="Quinces" class="galerias Ventanas2">
+		<article >
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write4"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeria">
+	    <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img1.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img2.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img3.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img4.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img5.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img6.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img7.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img8.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img9.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img9.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightQuinces');document.getElementById('imgQuinces').src = 'Imagenes/Galerias/Quinces/img10.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Quinces/img10.jpg" class="lazyload"><div class="new" ></div></a></li>
+			
+	</ul>
+    <!-- *************************************************************************************************** -->
+    <div id="lightQuinces">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaQuinces">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="10" id="QuincesTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightQuinces'); Stopfotos()">X</p>
+		    <div class="imagenLightHori">
+				<img id="imgQuinces"src="" onclick="next('imgQuinces', 'QuincesTotal', 'indexcambiaQuinces', 'carpetaQuinces')">
+			</div>
+		<div class="back" onclick="prev('imgQuinces', 'QuincesTotal', 'indexcambiaQuinces', 'carpetaQuinces'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgQuinces', 'QuincesTotal', 'indexcambiaQuinces', 'carpetaQuinces'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Quinces" id="carpetaQuinces">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('QuincesTotal', 'imgQuinces')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>  
+	</div>
+	</article>
+	</section>
+	<section id="boda" class="galerias Ventanas2">
+	<article >
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write5"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeriaV">
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img1.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img2.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img3.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img4.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img5.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img5.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img7.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img8.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img9.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img9.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img10.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img10.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img11.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img11.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a href="#" onclick="abrirlight('lightBoda');document.getElementById('imgBoda').src = 'Imagenes/Galerias/Boda/img12.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Boda/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    
+	</ul>
+    <div id="lightBoda">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaBoda">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="12" id="BodaTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightBoda'); Stopfotos()">X</p>
+		    <div class="imagenLight">
+				<img  id="imgBoda"src="" onclick="next('imgBoda', 'BodaTotal', 'indexcambiaBoda', 'carpetaBoda')">
+			</div>
+		<div class="back" onclick="prev('imgBoda', 'BodaTotal', 'indexcambiaBoda', 'carpetaBoda'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgBoda', 'BodaTotal', 'indexcambiaBoda', 'carpetaBoda'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Boda" id="carpetaBoda">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('BodaTotal', 'imgBoda')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>
+	</div>
+		    
+	</article>
+	</section>   
+	<section id="adulto" class="galerias Ventanas2">
+	 <article >
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write6"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeriaV">
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img1.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img2.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img3.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img4.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img5.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img6.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img7.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img8.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img9.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img9.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img10.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img10.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img11.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img11.jpg" class="lazyload"><div class="new" ></div></a></li>
+	     <li><a href="#" onclick="abrirlight('lightAdulto');document.getElementById('imgAdulto').src = 'Imagenes/Galerias/Adulto/img12.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/Adulto/img12.jpg" class="lazyload"><div class="new" ></div></a></li>
+			
+	</ul>
+    <!-- *************************************************************************************************** -->
+    <div id="lightAdulto">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaadulto">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="12" id="adultoTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightAdulto'); Stopfotos()">X</p>
+		    <div class="imagenLight">
+				<img id="imgAdulto"src="" onclick="next('imgAdulto', 'adultoTotal', 'indexcambiaadulto', 'carpetaadulto')">
+			</div>
+		<div class="back" onclick="prev('imgAdulto', 'adultoTotal', 'indexcambiaadulto', 'carpetaadulto'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgAdulto', 'adultoTotal', 'indexcambiaadulto', 'carpetaadulto'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Adulto" id="carpetaadulto">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas'onclick="playfotos('adultoTotal', 'imgAdulto')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>
+	</div>
+
+
+	</article>
+	</section>
+	<section id="Colecciones" class="galerias Ventanas2 ">
+		<article >
+		<div class="contenido">
+	        <p class="frase" >
+                <span class="classspan" id="write7"></span><span class="maquinaEscribir">|</span>
+		    </p>
+	    </div>
+	<ul class="galeria">
+	    <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img1.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img2.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img3.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img4.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img5.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img6.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img7.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img8.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img9.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img9.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 <li><a onclick="abrirlight('lightAnimales');document.getElementById('imgAnimales').src = 'Imagenes/Galerias/Animales/img10.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Animales/img10.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 
+	</ul>
+	<!--Paisajes-->
+	<ul class="galeria">
+	    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img1.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img2.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img3.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img4.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img4.jpg" class="lazyload"><div class="new" ></div></a></li>
+	    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img5.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img6.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img7.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img7.jpg" class="lazyload"><div class="new" ></div></a></li>
+		    <li><a onclick="abrirlight('lightPaisajes');document.getElementById('imgPaisajes').src = 'Imagenes/Galerias/Paisajes/img8.jpg'" >
+		                                                                               <img    data-src="Imagenes/Galerias/Paisajes/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+		 
+	</ul>
+	<!--Paisajes-->
+	<ul class="galeriaV">
+	     <li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img1.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img1.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img2.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img2.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img3.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img3.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img4.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img4.jpg"class="lazyload" ><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img5.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img5.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img6.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img6.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img7.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img7.jpg"class="lazyload" ><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img8.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img8.jpg" class="lazyload"><div class="new" ></div></a></li>
+		<li><a href="#" onclick="abrirlight('lightFlores');document.getElementById('imgFlores').src = 'Imagenes/Galerias/flores/img9.jpg'">							
+		                                                                        <img    data-src="Imagenes/Galerias/flores/img9.jpg"class="lazyload" ><div class="new" ></div></a></li>
+		
+	</ul>
+    <!--***************************************************************************************************-->
+    
+	<div id="lightAnimales">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaAnimales">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="11" id="AnimalesTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightAnimales'); Stopfotos()">X</p>
+		    <div class="imagenLightHori">
+				<img id="imgAnimales"src="" onclick="next('imgAnimales', 'AnimalesTotal', 'indexcambiaAnimales', 'carpetaAnimales')">
+			</div>
+		<div class="back" onclick="prev('imgAnimales', 'AnimalesTotal', 'indexcambiaAnimales', 'carpetaAnimales'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgAnimales', 'AnimalesTotal', 'indexcambiaAnimales', 'carpetaAnimales'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Animales" id="carpetaAnimales">
+	    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('AnimalesTotal', 'imgAnimales')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div>  
+	</div>
+	<div id="lightFlores">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaflores">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="17" id="floreslTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightFlores'); Stopfotos()">X</p>
+		    <div class="imagenLight">
+				<img id="imgFlores"src="" onclick="next('imgFlores', 'floreslTotal', 'indexcambiaflores', 'carpetafores')">
+			</div>
+		<div class="back" onclick="prev('imgFlores', 'floreslTotal', 'indexcambiaflores', 'carpetafores'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgFlores', 'floreslTotal', 'indexcambiaflores', 'carpetafores'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/flores" id="carpetafores">
+		    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('floreslTotal', 'imgFlores')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div> 
+		</div>
+	<!--PAISAJES-->
+    <div id="lightPaisajes">
+        <div class="contenedorbotones">	 
+		    <button class="botonlight" id="indexcambiaPaisajes">1</button>
+		        <p class="botonlight"> /</p>
+		    <input class="botonlight"type="button" value="21" id="PaisajeTotal">
+		</div>
+		<p class="cerrarLight" onclick="cerrarlight('lightPaisajes'); Stopfotos()">X</p>
+		    <div class="imagenLightHori">
+				<img  id="imgPaisajes"src="" onclick="next('imgPaisajes', 'PaisajeTotal', 'indexcambiaPaisajes', 'carpetaPaisajes')">
+			</div>
+		<div class="back" onclick="prev('imgPaisajes', 'PaisajeTotal', 'indexcambiaPaisajes', 'carpetaPaisajes'); Stopfotos()">&#60; </div>	
+		<div class="go" onclick="next('imgPaisajes', 'PaisajeTotal', 'indexcambiaPaisajes', 'carpetaPaisajes'); Stopfotos()"> > </div>
+		<input class="carpetastitulo" type="button" value="Imagenes/Galerias/Paisajes" id="carpetaPaisajes">
+		    <nav class="navLight">
+		    <ul>
+			    <li class="activeFotos"><i class='fas cambiarsola'onclick="playfotos('PaisajeTotal', 'imgPaisajes')">&#xf04b;</i></li>
+			    <li class="activeFotos2"><i class='fas cambiarsola2'onclick="Stopfotos()">&#xf04c;</i></li>				
+			</ul>
+		</nav>
+		<div class="barrausuario">   </div> 
+		</div>	
+	<!--PAISAJES-->	
+	
+	</article>
+	</section>	 
+	
+	 <!--Seccion para el contenido de los usuarios solo es necesario 
+	 reemplazaro los nombres y la ruta de la carpeta con las imagenes y AGREGAR EL NOMBRE DEL ID EN EL CSS GALERIAS--->
+	 <!--Seccion para el contenido de los usuarios--->
+  
+    <section id="Usuarioslogeados" class="galerias Ventanas2">  
+		<div class="contenido">
+	    </div>
+	    <ul class="galeriaV" id="listaFotosUser">
+	    </ul>
+        <div id="lightusuarios">
+            <div class="contenedorbotones">	 
+		        <button class="botonlight" id="indexcambiausuarios">1</button>
+			        <p class="botonlight"> /</p>
+		        <input class="botonlight"type="button"  id="usuariosTotal">
+		    </div>
+		    <p class="cerrarLight" onclick="cerrarlight('lightusuarios'); Stopfotos()">X</p>
+		    <div class="imagenLight" >
+			    <img id="imgusuarios" src="" onclick="next('imgusuarios', 'usuariosTotal', 'indexcambiausuarios', 'carpetausuarios')">
+			</div>
+	    	<div class="back" onclick="prev('imgusuarios', 'usuariosTotal', 'indexcambiausuarios', 'carpetausuarios');Stopfotos()">&#60; </div>	
+		    <div class="go" onclick="next('imgusuarios', 'usuariosTotal', 'indexcambiausuarios', 'carpetausuarios');Stopfotos()"> > </div>
+		    <input class="carpetastitulo" type="button" id="carpetausuarios">
+		    <nav class="navLight">
+		        <ul>
+			        <li class="activeFotos"><i class='fas'onclick="playfotos('usuariosTotal', 'imgusuarios' )">&#xf04b;</i></li>
+			        <li class="activeFotos2"><i class='fas'onclick="Stopfotos()">&#xf04c;</i></li>		
+                </ul>
+		    </nav>
+		    <div class="barrausuario">   </div>
+	    </div>
+    </section>
+</section>	
+   <!-- <div id="preloader"> -->
+	    <!-- <img src="Imagenes/Iconos/loader.png"> -->
+	<!-- </div> -->
+	<div id="irArriba" class="irArriba" onclick="window.scroll(0, 0)">
+        <i class='fas'>&#xf106;</i>
+	</div>
+	<section id="Admin" class="ventanas" >
+	    <div class="ContenedorAdmin">	
+            <div class="itemAdmin itemUsuarios">		
+                <div class="headerAdmin">
+                    <div>
+					    <h6 class="titulosAdmin">Contacto</h6>	
+					</div>
+					<div class="refrescar" >
+      				    <i onclick="mostrarDatos('Todos')" class='fas'>&#xf381;</i>
+						<i onclick="mostrarDetalles('lifirebase', 'itemUsuarios')"class='fas'>&#xf884;</i>
+						<i onclick="mostrarFiltros()" class="fas">&#xf0b0;</i>
+						<label for="totalContactosbutton" style="color: #909090;"><i class='fas'>&#xf500;</i></label>
+				        <input class="totales" id="totalContactosbutton"type="text" >					
+						
+						<div class="contenedorFiltros">
+						    <ul>
+							    <li onclick="mostrarDatos('Todos'); mostrarFiltros()">Todos</li>
+							    <li onclick="mostrarDatos('Pendiente'); mostrarFiltros()">Pendiente</li>
+							    <li onclick="mostrarDatos('Contactado'); mostrarFiltros()">Contactado</li>
+							    <li onclick="mostrarDatos('En proceso'); mostrarFiltros()">En proceso</li>
+							    <li onclick="mostrarDatos('Imposible contactar'); mostrarFiltros()">Imposible contactar</li>
+						    </ul>
+						</div>
+					</div>
+					<div id="AlertaEliminar">
+					     <p>Se eliminara el archivo de manera pemanente.<br></p>
+						 <p>
+						     <i  class='fas'>&#xf65d;</i>
+						     <input type="button" id="archivoEliminar">
+						 </p>
+						 <p>
+						     <button class="botones" onclick="deletetaskf(); showdelete()">Continuar</button>
+						     <button class="botones" onclick="showdelete()">Cancelar</button>
+						 </p>
+					</div>
+					<div id="AlertaEditar">
+						 <p class="nombreFileEdit">
+						     <i  class='fas'>&#xf65d;</i> 
+						     <input type="button" id="archivoEditar">
+						 </p>
+						 <input class="newComent"type="text" id="nuevosComentarios" value="Sin comentarios.">
+						 <select id="idselect">
+						     <option>Fijar nuevo estado</option>
+						     <option>Pendiente</option>
+						     <option>Contactado</option>
+						     <option>En proceso</option>
+						     <option>Imposible contactar</option>
+						 </select><br>
+						 
+						 <p>
+						     <button class="botones" onclick="editarContacto()">Guardar</button>
+						     <button class="botones" onclick="showEditar()">Cancelar</button>
+						 </p>
+					</div>
+			    </div>				
+		        <ul class="listaContacto"id="datosfirebase">
+	            </ul>
+			</div>	
+			<div class="itemAdmin">
+            </div>		
+			<div class="itemAdmin itemVisitas">	
+                <div class="headerAdmin">
+                    <div>	
+                        <h6 class="titulosAdmin">Visitas</h6>
+					</div>
+					<div class="refrescar" >
+      				    <i onclick="mostarDatos2()"class='fas'>&#xf381;</i>
+						<i onclick="mostrarDetalles('lifirebaseVisitas', 'itemVisitas', 'normal')"class='fas'>&#xf884;</i>
+						<i onclick="mostrarDetalles('lifirebaseVisitas', 'itemVisitas', 'tres')" class="material-icons">&#xe3d2;</i>
+				        
+						<label for="totalVisitas" style="color: #909090;"><i  class='fas'>&#xf500;</i></label>
+				        <input class="totales" id="totalVisitas"type="text" >
+					</div>
+			    </div>			
+		        <ul class="listaContacto"id="datosfirebaseVisitas">
+	            </ul>
+            </div>
+		</div>
+	</section>
+  <footer>
+        <div class="contenedorRedes">
+		   <a  href="https://web.facebook.com/daleja16" target="_blank"><img data-src="Imagenes/Iconos/facebook.png" class="lazyload"></a>
+		   <a  href="https://www.instagram.com/aleja.c_a/?hl=es-la" target="_blank"><img data-src="Imagenes/Iconos/instagram.png" class="lazyload"></a>
+	       <a  href="https://web.whatsapp.com/" target="_blank"><img data-src="Imagenes/Iconos/whatsapp.png" class="lazyload"></a>
+	       <a  href="https://co.pinterest.com/alejadu16/pins/" target="_blank"><img data-src="Imagenes/Iconos/pinterest.png" class="lazyload"></a>
+	   	</div>
+	    <p class="por">Diseñado por:</p>
+        <p>Edwar Castaño 2020 </br>Todos los derechos reservados</p>
+	<div style="font-size:10px;">
+		Iconos diseñados por
+		<a style="text-decoration: none; color: #505050" href="https://www.flaticon.es/autores/photo3idea-studio" target="_blank" title="photo3idea_studio">photo3idea_studio</a>
+		from <a style="text-decoration: none; color: #505050"href="https://www.flaticon.es/"  target="_blank" title="Flaticon">www.flaticon.es</a>
+	</div>
+		
+	
+   </footer>
+<script src="scripts/lazysizes.min.js" async></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' async></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" ></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js" ></script>
+<!-- Fin Firebase links -->
+<script src="scripts/cod.js" async></script>
+<script src="scripts/contacto.js" async></script>	
+		    	<!--librerias 360-->
+<script  src="scripts/sphoords.js" ></script>
+<script  src="scripts/photo-sphere-viewer.min.js" ></script>
+<script  src="scripts/three.min.js" ></script>
+        <script async>
+			var div = document.getElementById('Imagen360');
+			var PSV = new PhotoSphereViewer({
+					panorama: 'https://edcas804.github.io/360/1.jpg',
+					container: div,
+					time_anim: 10,
+					navbar: true,
+					navbar_style: {
+						backgroundColor: 'rgba(0,0,0, 0.3)',
+						buttonsColor: '#fff',
+						activeButtonsBackgroundColor: 'rgba(58, 67, 77, 0.6)'
+					},
+					buttonsHeight: '30',
+					autorotateThickness: '0',
+					
+				});
+		</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+.ContenedorAdmin {
+	padding: 100px 0 0 0;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 300px 300px;
+	width: 100%;
+	background: var(--main-background-adminHeader);
+ }
+.itemAdmin {
+	border-left: 1px solid #000;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	max-height: 700px;
+	overflow: auto;
+	padding: 0 0 2rem 0;
+}
+.headerAdmin {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;  
+	padding: 1rem;
+	width: 90%;
+	border-bottom: 2px solid #000;
+	position: relative;
+	
+}
+.titulosAdmin {
+	color: #ffaa00;
+	font-size: var(--main-font-size-parrafos);
+}
+.listaContacto {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	align-items: center;
+	list-style: none;
+	max-width: 480px;
+	
+}
+.lifirebase, .lifirebaseVisitas {
+	position: relative;
+	padding: .5rem;
+	background: #080808;
+	border-radius: .6rem;
+	padding: .6rem;
+	margin: .1rem 0;
+	display: block;
+}
+.lifirebase{min-width: 450px;}
+/* .lifirebaseVisitas 	 */
+.lifirebase input {
+	background: none;
+	outline: none;
+	border: none;
+	color: var(--main-color-adminHeader);
+	font-size: 1rem;
+	cursor: pointer;
+	text-align: center;
+}
+.lifirebase p, .lifirebaseVisitas p{
+	color: var(--main-color-adminHeader);
+	font-size: 1rem;
+	line-height: 1.2rem;
+	padding: .3rem;
+}
+
+.lifirebase p, .lifirebaseVisitas p{
+	display: none;
+}
+
+.comentariosPost {
+	border-radius: .3rem;
+	padding: .8rem;
+	text-align: center;
+	border: 1px solid #151515;
+}
+.contenedorEstadoNum {
+	display: flex; 
+	justify-content: space-between; 
+	align-items: flex-start;
+	width: 100%;
+	position: relative;
+}
+.contenedorEstadoNum:first-child{padding: .4rem 0;}
+.listaComentarios {	
+	padding: .5rem 0;
+	text-align: right;
+}
+.listaComentarios i{
+	color: #00aaff;
+	
+}
+.listaComentarios input{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: .3rem;
+	background: #ddd;
+	border: none;
+	border-radius: .5rem;
+	color: #202020;
+	display: none;
+	z-index: 150;
+}
+.listaComentarios:hover input{
+	display:block;
+}
+.listaComentarios .comentariosInternos{
+	position: absolute;
+	bottom: 80%;
+	right: 0;
+	padding: 1rem;
+	background: #ddd;
+	border-radius: .5rem;
+	color: #202020;
+	display: none;
+	z-index: 150;
+	text-align: center;
+}
+.listaComentarios:hover .comentariosInternos{
+	display:block;
+	
+}
+.deleteContacto, .editContacto{
+	border: none;
+	background: none;
+	outline: none;
+	z-index: 1;
+	font-size: 1rem;
+	color: #303030;
+	padding: 0 .4rem;
+	transition: .5s;
+}
+.deleteContacto {
+	top: 0;
+	right: .5rem;
+}
+.editContacto {
+	top: 0;
+	right: 2rem;
+}
+.deleteContacto:hover{color: #ff0000;}
+.editContacto:hover{color: #00ccff;	}
+.totales {
+	color: #00ff00;
+	background: none;
+	border: none;
+	outline: none;  
+	font-weight: bold;
+	width: 1rem;
+	text-align: center;
+}
+.refrescar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+position: relative;	   
+}
+.refrescar i  {
+	font-size: 1.2rem;
+	color: #606060; 
+	padding: .3rem .5rem; 
+	transition: .5s;
+	border-left: 1px solid #000;
+}.refrescar i:hover{color: #00ff00}
+.refrescar i:nth-child(4):hover{
+	color: #ff0000;
+}
+.contenedorFiltros {
+	display: none;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 100;
+	border-radius: .3rem;
+	padding: 0 .4rem;
+	background: #080808;
+	box-shadow: 0px 5px 8px #000;
+	border: 1px solid #151515;
+}
+.contenedorFiltros ul li{
+	color: var(--main-color-adminHeader);
+	padding: .8rem;
+	text-align: center;
+	list-style: none;
+	cursor: pointer;
+}
+.contenedorFiltros ul li:hover{transform: scale(1.01)}
+#AlertaEliminar, #AlertaEditar {
+	display: none;
+	position: fixed;
+	top: 20%;
+	max-width: 600px;
+	left: 3rem;
+	right: 3rem;
+	border-radius: 1rem;
+	padding: 1rem;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	z-index: 100;
+	border: 1px solid #151515;
+	background: #080808;
+	box-shadow: 0px 5px 8px #000;
+} 
+#AlertaEliminar p{
+	color: #fff; 
+	text-align: center;
+	font-size: 1.2rem;
+}
+#AlertaEliminar p i {
+	color: #ff0000;
+	font-weight: bold;
+	padding: .6rem;	
+}#AlertaEliminar p i{color: #ff0000}
+#AlertaEliminar button, #AlertaEditar button{
+	padding: .6rem;
+}
+#AlertaEliminar input, #AlertaEditar input{
+	background: none;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+}
+#AlertaEliminar input{color: #ff0000;}
+#AlertaEditar .nombreFileEdit i, .nombreFileEdit input{
+	color: #00bbff;
+	padding: 1rem 0;
+}
+#AlertaEditar .newComent {
+	padding: .6rem 0;
+	border-radius: .3rem;
+	background: #aaa;
+	color: #000;
+	outline: none;
+	border: none;
+	text-align: center;
+	overflow: auto;
+	transition: .5s;
+}
+#idselect {
+	background: #000;
+	border: 1px solid #404040;
+	outline: none;
+	border-radius: .3rem;
+	padding: .8rem;
+	color: #909090;
+	font-size: 1rem;
+	margin-top: .8rem;
+}
+#idselect:focus{
+	border: 1px solid #00ccff;
+}
+#AlertaEliminar p:nth-child(2){
+	color: #ff0000; 
+    padding: .6rem;
+}
+@media(max-width:950px){
+	.ContenedorAdmin {
+	    padding: 120px 0 0 0;
+	    display: grid;
+	    grid-template-columns: 1fr;
+    }
+}
+@media(max-width:700px){
+	.listaComentarios input {
+		font-size: .8rem;
+	}
+}	
+@media(max-width:480px){
+	
+	.lifirebase{min-width: 300px;}
+}	
+#buttonAdmin {
+	display: none;
+}
