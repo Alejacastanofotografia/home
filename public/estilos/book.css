@@ -1,168 +1,200 @@
+#libroInfantil {
+  display: flex; }
 
-#libroInfantil{display:flex}
-#libroComunion{display:none}
-.container, .containerh{
-	position:relative;
-    left: 50%;
-	perspective: 1000px;
-	transform: translateX(10deg);
-	border-right: 3px solid #606060;
-	border-top: 3px solid #606060;
-	border-bottom: 3px solid #606060;
-	border-style: inset;
-	margin: 1rem 0;
-}
-.container{    
-    background-image: url(../Imagenes/EfectoBook/img21.jpg);
-	background-size:cover;
-	width: 400px;
-	height: 307px;
-}
-.containerh{	    
-    background-image: url(../Imagenes/EfectoBook/Iimgv7.jpg);
-	background-size:cover;
-	height: 400px;
-	width: 307px;
-}
+#libroComunion {
+  display: none; }
+
+.container, .containerh {
+  position: relative;
+  left: 50%;
+  perspective: 1000px;
+  transform: translateX(10deg);
+  border-right: 3px solid #606060;
+  border-top: 3px solid #606060;
+  border-bottom: 3px solid #606060;
+  border-style: inset;
+  margin: 1rem 0; }
+
+.container {
+  background-image: url(../Imagenes/EfectoBook/img21.jpg);
+  background-size: cover;
+  width: 400px;
+  height: 307px; }
+
+.containerh {
+  background-image: url(../Imagenes/EfectoBook/Iimgv7.jpg);
+  background-size: cover;
+  height: 400px;
+  width: 307px; }
+
 .containerhnuevo {
-	height: 500px;
-	width: 375px;
-}
-@media (max-width:800px) {
-	.container {
-		width: 255px;
-	    height: 190px;
-	}
-	.containerh {
-		width: 190px;
-	    height: 255px;		
-	}
-	.containerhnuevo {
-		width: 250px;
-	    height: 333px;		
-	}
-}
-@media (max-width:500px) {
-	.container {
-		width: 170px;
-	    height: 130px;
-	}
-	.containerh {
-		width: 130px;
-	    height: 170px;		
-	}
-	.containerhnuevo {
-		width: 156px;
-	    height: 208px;		
-	}
-}
-@media (max-width:330px) {
-	.container {
-		width: 150px;
-	    height: 114px;
-	}
-	.containerh {
-		width: 114px;
-	    height: 150px;		
-	}
-	.containerhnuevo {
-		width: 150px;
-	    height: 202px;		
-	}
-}
+  height: 500px;
+  width: 375px; }
 
-.cover, .cover2, .cover3, .coverInfant, .coverInfant2, .coverInfant3{
-	width:98%;
-	height:99%;
-	position: absolute;
-	top: -2px;
-	background-color: #d5d5d5;
-	transform-style: preserve-3d;
-	transform-origin: left;
-	transition: all .5s easy-in;
-}  
+@media (max-width: 800px) {
+  .container {
+    width: 255px;
+    height: 190px; }
+  .containerh {
+    width: 190px;
+    height: 255px; }
+  .containerhnuevo {
+    width: 250px;
+    height: 333px; } }
+
+@media (max-width: 500px) {
+  .container {
+    width: 170px;
+    height: 130px; }
+  .containerh {
+    width: 130px;
+    height: 170px; }
+  .containerhnuevo {
+    width: 156px;
+    height: 208px; } }
+
+@media (max-width: 330px) {
+  .container {
+    width: 150px;
+    height: 114px; }
+  .containerh {
+    width: 114px;
+    height: 150px; }
+  .containerhnuevo {
+    width: 150px;
+    height: 202px; } }
+
+.cover, .cover2, .cover3, .coverInfant, .coverInfant2, .coverInfant3 {
+  width: 98%;
+  height: 99%;
+  position: absolute;
+  top: -2px;
+  background-color: #d5d5d5;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: all .5s easy-in; }
+
 .cover, .cover2, .coverInfant, .coverInfant2 {
-	border: 3px solid #d5d5d5;
-}
-.cover3, .coverInfant3{
-	border:2px solid #d5d5d5; 
-	border-style: outset;
-	outline-style: solid;
-	outline-color: #303030;
-	outline-width: 1px;
-}              
- /*.container:hover .cover {
+  border: 3px solid #d5d5d5; }
+
+.cover3, .coverInfant3 {
+  border: 2px solid #d5d5d5;
+  border-style: outset;
+  outline-style: solid;
+  outline-color: #303030;
+  outline-width: 1px; }
+
+/*.container:hover .cover {
 	transform: rotateY(-175deg);
 	transition: all 1s easy;
     
 	} */
- /*animacion*/	
-
-
+/*animacion*/
 .cover, .coverInfant {
-	animation: abrir3 15s infinite;
-	animation-delay:5s  easy-out;
-}    @keyframes abrir3 {
-	0%{transform: rotateY(-0deg);z-index: 1}
-	0%{transform: rotateY(-0deg);z-index: 1}
-	
-	25%{transform: rotateY(-5deg);z-index: 6}
-	
-	30%{transform: rotateY(-0deg); z-index: 6; box-shadow: 1px 1px 1px #aaa;}
-    43%{transform: rotateY(-180deg); z-index: 6; box-shadow: 1px 5px 5px #050505;}
-	51%{transform: rotateY(-182deg); z-index: 3}
-	
-    /* 51%{transform: rotateY(-180deg); z-index: 6} */
-	60%{transform: rotateY(-0deg); z-index: 6}
-}
+  animation: abrir3 15s infinite;
+  animation-delay: 5s  easy-out; }
 
-.cover2, .coverInfant2  {
-	animation: abrir2 15s infinite;
-	animation-delay:5s easy-out;
-}    @keyframes abrir2 {
-	0%{transform: rotateY(-0deg);z-index: 1}
-	10%{transform: rotateY(-10deg);z-index: 6}
-    15%{transform: rotateY(-0deg); z-index: 6; box-shadow: 1px 1px 1px #aaa;}
-    30%{transform: rotateY(-180deg); z-index: 6; box-shadow: 1px 5px 5px #050505;}
-	34%{transform: rotateY(-180deg); z-index: 2;}
-	
-	54%{transform: rotateY(-180deg); z-index: 2}
-	55%{transform: rotateY(-174deg); z-index: 6;}
-	60%{transform: rotateY(-180deg); z-index: 6;}
-	75%{transform: rotateY(-0deg); z-index: 6;}
-}
+@keyframes abrir3 {
+  0% {
+    transform: rotateY(0deg);
+    z-index: 1; }
+  0% {
+    transform: rotateY(0deg);
+    z-index: 1; }
+  25% {
+    transform: rotateY(-5deg);
+    z-index: 6; }
+  30% {
+    transform: rotateY(0deg);
+    z-index: 6;
+    box-shadow: 1px 1px 1px #aaa; }
+  43% {
+    transform: rotateY(-180deg);
+    z-index: 6;
+    box-shadow: 1px 5px 5px #050505; }
+  51% {
+    transform: rotateY(-182deg);
+    z-index: 3; }
+  /* 51%{transform: rotateY(-180deg); z-index: 6} */
+  60% {
+    transform: rotateY(0deg);
+    z-index: 6; } }
 
-.cover3, .coverInfant3  {
-	animation: abrir1 15s infinite;
-	animation-delay:5s  easy-out;
-	
-}    @keyframes abrir1 {
-	0%{transform: rotateY(-1deg); z-index: 6;box-shadow: 1px 1px 1px #aaa}
-    15%{transform: rotateY(-180deg); z-index: 6;box-shadow: 1px 10px 10px #050505;}
-    19%{transform: rotateY(-176deg); z-index: 1;}
-	
-	65%{transform: rotateY(-180deg); z-index: 1}
-	75%{transform: rotateY(-170deg); z-index: 6}
-	90%{transform: rotateY(-0deg); z-index: 6}
-	100%{transform: rotateY(-6deg); z-index: 6}
- 
-}
- /*Fin animacion*/                                                           
+.cover2, .coverInfant2 {
+  animation: abrir2 15s infinite;
+  animation-delay: 5s easy-out; }
 
+@keyframes abrir2 {
+  0% {
+    transform: rotateY(0deg);
+    z-index: 1; }
+  10% {
+    transform: rotateY(-10deg);
+    z-index: 6; }
+  15% {
+    transform: rotateY(0deg);
+    z-index: 6;
+    box-shadow: 1px 1px 1px #aaa; }
+  30% {
+    transform: rotateY(-180deg);
+    z-index: 6;
+    box-shadow: 1px 5px 5px #050505; }
+  34% {
+    transform: rotateY(-180deg);
+    z-index: 2; }
+  54% {
+    transform: rotateY(-180deg);
+    z-index: 2; }
+  55% {
+    transform: rotateY(-174deg);
+    z-index: 6; }
+  60% {
+    transform: rotateY(-180deg);
+    z-index: 6; }
+  75% {
+    transform: rotateY(0deg);
+    z-index: 6; } }
+
+.cover3, .coverInfant3 {
+  animation: abrir1 15s infinite;
+  animation-delay: 5s  easy-out; }
+
+@keyframes abrir1 {
+  0% {
+    transform: rotateY(-1deg);
+    z-index: 6;
+    box-shadow: 1px 1px 1px #aaa; }
+  15% {
+    transform: rotateY(-180deg);
+    z-index: 6;
+    box-shadow: 1px 10px 10px #050505; }
+  19% {
+    transform: rotateY(-176deg);
+    z-index: 1; }
+  65% {
+    transform: rotateY(-180deg);
+    z-index: 1; }
+  75% {
+    transform: rotateY(-170deg);
+    z-index: 6; }
+  90% {
+    transform: rotateY(0deg);
+    z-index: 6; }
+  100% {
+    transform: rotateY(-6deg);
+    z-index: 6; } }
+
+/*Fin animacion*/
 .containerh img, .container img {
-	margin:0;
-	display: block;
-	position: absolute;
-	width:100%;
-	height: 100%;
-	object-fit: cover;
-	backface-visibility: hidden;	
-	
-}
-.containerh .backInfant,.container .backl,
-.containerh .backInfant2,.container .back2,
-.containerh .backInfant3, .container .back3{
-	transform:rotateY(180deg);
-}
- 
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  backface-visibility: hidden; }
 
+.containerh .backInfant, .container .backl,
+.containerh .backInfant2, .container .back2,
+.containerh .backInfant3, .container .back3 {
+  transform: rotateY(180deg); }

@@ -1,0 +1,51 @@
+.contacto {
+    @include flexCenterCol;
+    width: 100%;    
+    form {
+        min-width: 300px;
+        max-width: 480px;
+	@include flexCenterCol;
+        width: 100%; 
+	input, textarea{
+	    @include input;
+	}
+        h3{
+	    margin: 1rem;
+           color: var(--white-color); 
+        }
+        p{
+	    margin: 0 0 1rem 0;
+           color: var(--white-color); 
+	   text-align: center;
+	   font-size: var(--font-s-large);
+        }
+
+    }
+
+}
+.contenidoSobreMi {
+    background: url('../Imagenes/Fondos/sobremi2.png');
+    height: 800px;
+    transition: 1s;
+    position: relative;
+    .itemSobreMi {
+	height: 100%;
+	width: 60%;
+	position: absolute;
+	left: 0;
+	@include flexCenterCol;
+	h3 {
+            font-size: var(--font-s-large);	
+	    color: var(--white-color);
+	    margin: 0 0 1.5rem 0;
+	}
+        p {
+            color: var(--white-color);	
+	    width: 70%;
+	    font-size: var(--font-s-large);
+	}
+    }
+    
+}
+.c360 {
+}

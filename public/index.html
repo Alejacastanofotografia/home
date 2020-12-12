@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="estilos/main.css" async>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Della Respira' rel='stylesheet' async> -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
+	<script src="scripts\aframe-new.js"></script>
 </head>
-<body onload="consultaCantidad()">
+<body> 
     <header id="header">
 	    <div class="slider" id="imgSlider" >
 	        <div class="imgagenesSlider">
@@ -48,18 +49,15 @@
 				    <source srcset="Imagenes/Nslider/media/img4.jpg" type="image/webp">
 		            <img  class="itemImg" src="Imagenes/Nslider/img4.jpg" alt="Retratos" title="Retratos">
 				</picture>
-		    </div>
-
-
-
-	   <!--titulo y menu en absolute">-->
+	        </div>
+	       <!--titulo y menu en absolute">-->
 	        <div class="afterimgSlider"></div>
 	    </div>	
 		<nav>
 		    <div class="contenedorSlider" >
 			    <div class="items" >
 				    <li id="navInicio" class="tabs" onclick="navegacion(event, 'principal', false, 'navInicio'); window.scroll(10,800)">
-				    	<a class='fas'>&#xf015; <span id="textoInicio">Inicio</span></a>
+				    	<a class='fas' href="#">&#xf015; <span id="textoInicio">Inicio</span></a>
 					</li>
 				</div>
 		        <div class="items"  >
@@ -101,46 +99,8 @@
 					</li>
 				</div>
 		    </div>
-			
-	       <div class="menuLogin" >
-			        <button class="cerrarLogin"onclick="abrirMenuLogin()">X</button>
-				    <form id="formularioLogin">
-         					<h4 class="tituloLogin">Iniciar sesión<i  class='fas iconUser'>&#xf2bd;</i></h4><br>
-			                <p >
-				              Inicia sesión para visualizar tus fotografías y descargarlas.
-				            </p>
-					    <input type="text"  placeholder="Usuario" id="usuario">
-					    <input type="password"  placeholder="Contraseña" id="documento">
-						<button class="botones">Iniciar</button>
-				        <p id="mensajesFormularioLogin"></p>
-				    </form>
-					
-					<div class="menuLogout">
-					    <h5 class="tituloLogin"><span id="nombreUsuarioTitulo"></span><i  class='fas iconUser'>&#xf2bd;</i></h5><br>
-				        <p id="mensajeBienvenida"></p>
-						   <a class="enlaceDescargar" href="https://drive.google.com/drive/folders/12eDtPMPl0tAvTjRSUeE95uuYlmzdzk2J?usp=sharing" target="_blank">
-						       Descargalas Aquí.
-						   </a>
-				        <button class="botones" onclick="location.reload()">Cerrar Sesión</button>
-					</div>
-			        <button id="buttonAdmin"class="botones" onclick="navegacion(event, 'Admin', 'noHead', 'navSesiones')" >Admin</button>
-			</div>	
-				
 		</nav>
 	</header>
-	<!-- Retrato tus momentos especiales, atenta a cada detalle que asegure maravillosos recuerdos plasmados en cada
-					fotografía. -->
-    <!-- Retrato tus momentos especiales, atenta a cada detalle que asegure maravillosos recuerdos plasmados en cada
-					fotografía.				 -->
-	
-    <!-- Una experiencia única para conservar los
-	momentos más especiales de tu vida en increíbles fotografías
-	360 grados y panorámicas 180, para que ningún detalle se escape. -->
-
-
-	<!-- Soy Comunicadora Audiovisual, apasionada por la fotografía, 
-	la cual es para mí una manera de conservar la memoria y viajar en el tiempo 
-	hasta el pasado, para recordar los momentos bonitos que marcaron nuestras vidas. -->
 	<section class="ventanas" id="principal">
 		<div   class="fraseHome">
 			<p class="frasehomeP">
@@ -149,53 +109,47 @@
 			</p>
 		</div>
 		<div class="MainBanner" id="">
-			<div class="wrapperImgBanner">
-				<div class="wrapperText ">
-					<p >
-						<i class="b-shadow">Todos</i> <br>
-						<i class="b-shadow" >los</i>  <i class="light-c b-shadow">sueños</i> <br>
-						<i class="b-shadow">pueden</i> <i class="b-shadow">hacerse</i> <br>
-						
-						<span>R</span>
-						<span>E</span>
-						<span>A</span>
-						<span>L</span>
-						<span>I</span>
-						<span>D</span>
-						<span>A</span>
-						<span>D</span>
-						<span>.</span>
-					</p>
-				</div>
+			<div class="wrapperImgBanner scrollRight">
+			</div>
+			<div class="bannerText contenidoScroll">
+			    <p>Con mi camara me aseguro de capturar los momentos mas especiales de tu vida.</p>
+			</div>
+			<div class="wrapperImgBanner scrollRight">
+			</div>
+			<div class="bannerText contenidoScroll">
+			    <p>Atenta a cada detalle que asegure maravillosas fotografías.</p>
+			</div>
+			<div class="wrapperImgBanner scrollRight">
 			</div>
 		</div>
-		<div class="MainBanner2" id="">
-			<div class="wrapperImgBanner">
-				<div class="wrapperText ">
-					<p >
-						<i class="b-shadow">Todos</i> <br>
-						<i class="b-shadow" >los</i>  <b class="light-c b-shadow">sueños</b> <br>
-						<i class="b-shadow">pueden</i> <i class="b-shadow">hacerse</i> <br>
-						
-						<span>R</span>
-						<span>E</span>
-						<span>A</span>
-						<span>L</span>
-						<span>I</span>
-						<span>D</span>
-						<span>A</span>
-						<span>D</span>
-						<span>.</span>
-					</p>
-				</div>
-			</div>
+		</div>
 		</div>
 		
 		<div class="c360 " id="c360">
 		</div>
-		<div class="contenidoSobreMi" id="sobreMi">
+		<div class="contenidoSobreMi contenidoScroll" id="sobreMi">
+		    <div class="itemSobreMi ">
+			<h3>SOBRE MI</h3>
+			<p class="scrollRigh">
+                            Soy comunicadora Audiovisual, apasionada por la fotografía, la cual es para mí una manera de conservar la memoria y viajar en el tiempo hasta el pasado, para recordar los momentos bonitos que marcaron nuestras vidas.
+			</p>
+		    </div>
 		</div>
+
+		<!--Contacto-->
 		<div class="contacto " id="contacto">
+		    <form action="">
+		        <h3>CONTACTO</h3>
+		        <p>
+			    Puedes contactarme a través de mis redes sociales o ingresar tus datos en el siguiente 
+                            formulario y te contactaré en el menor tiempo posible
+			</p>
+		        <input type="text" placeholder="Nombre:">
+		        <input type="email" placeholder="Correo:">
+		        <input type="text" placeholder="Teléfono">
+		        <textarea id="" name="" cols="30" rows="10" placeholder="Escribe tus comentarios aquí"></textarea>
+			<button class="button">ENVIAR</button>
+		    </form>
 		</div>
 		</section>
 	<!--Efecto Book-->
@@ -234,35 +188,35 @@
     <div id="libroComunion" >	   
 	   <div class="container" >
 		    <div class="cover">
-			    <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img25.jpg" media="(max-width: 600px)" >
-		            <img   class="front lazyload" data-src="Imagenes/EfectoBook/img25.jpg" alt="books" title="Retratos">
+		        <picture>
+		            <img   class="front lazyload" data-src="Imagenes/EfectoBook/img25.jpg" 
+			                                   alt="books" title="Retratos">
+			</picture>
+		        <picture>
+		            <img  class="backl lazyload" data-src="Imagenes/EfectoBook/img26.jpg" 
+			                                 alt="books" title="Retratos">
+		        </picture>
+		    </div>
+		    <div class="cover2">
+		        <picture>
+		            <img   class="front2 lazyload" data-src="Imagenes/EfectoBook/img23.jpg"
+			                                   data-srcset="Imagenes/EfectoBook/media/img23.jpg 600w"alt="books" title="Retratos">
+		        </picture>
+		        <picture>
+		            <img  class="back2 lazyload" data-src="Imagenes/EfectoBook/img24.jpg"
+			                                 alt="books" title="Retratos">
+		        </picture>
+		    </div>
+		    <div class="cover3">
+		        <picture>
+		            <img   class="front3 lazyload" data-src="Imagenes/EfectoBook/img9.jpg" 
+			                                   alt="books" title="Retratos">
 			    </picture>
 		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img26.jpg" media="(max-width: 600px)">
-		            <img  class="backl lazyload" data-src="Imagenes/EfectoBook/img26.jpg" alt="books" title="Retratos">
-			    </picture>
-			</div>
-			<div class="cover2">
-			    <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img23.jpg" media="(max-width: 600px)" >
-		            <img   class="front2 lazyload" data-src="Imagenes/EfectoBook/img23.jpg" alt="books" title="Retratos">
-			    </picture>
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img24.jpg" media="(max-width: 600px)">
-		            <img  class="back2 lazyload" data-src="Imagenes/EfectoBook/img24.jpg" alt="books" title="Retratos">
-			    </picture>
-			</div>
-			<div class="cover3">
-			    <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img9.jpg" media="(max-width: 600px)" >
-		            <img   class="front3 lazyload" data-src="Imagenes/EfectoBook/img9.jpg" alt="books" title="Retratos">
-			    </picture>
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/img22.jpg" media="(max-width: 600px)">
-		            <img  class="back3 lazyload" data-src="Imagenes/EfectoBook/img22.jpg" alt="books" title="Retratos">
-			    </picture>
-			</div>
+		            <img  class="back3 lazyload" data-src="Imagenes/EfectoBook/img22.jpg"
+			                                 alt="books" title="Retratos">
+		        </picture>
+		    </div>
 			
         </div>
 	</div>
@@ -271,34 +225,22 @@
 	<div id="libroInfantil"  >	   
 	   <div class="containerh" >
 		   <div class="coverInfant">
-			    <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv5.jpg" media="(max-width: 600px)" >
-		            <img   class="frontInfant lazyload" data-src="Imagenes/EfectoBook/Iimgv5.jpg" alt="books" title="Retratos">
-			    </picture>
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv6.jpg" media="(max-width: 600px)">
-		            <img  class="backInfant lazyload" data-src="Imagenes/EfectoBook/Iimgv6.jpg" alt="books" title="Retratos">
-			    </picture>
+		            <img  data-sizes="auto" data-src="Imagenes/EfectoBook/Iimgv5.jpg" 
+								alt="books" title="Retratos" class="frontInfant lazyload" />
+		            <img  class="backInfant lazyload" data-src="Imagenes/EfectoBook/Iimgv6.jpg" 
+			                                       alt="books" title="Retratos">
 			</div>
-			<div class="cover2">
-			    <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv3.jpg" media="(max-width: 600px)" >
-		            <img   class="frontInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv3.jpg" alt="books" title="Retratos">
-			    </picture>
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv4.jpg" media="(max-width: 600px)">
-		            <img  class="backInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv4.jpg" alt="books" title="Retratos">
-			    </picture>
+			<div class="coverInfant2">
+		            <img   class="frontInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv3.jpg"
+			                                          alt="books" title="Retratos">
+		            <img  class="backInfant2 lazyload" data-src="Imagenes/EfectoBook/Iimgv4.jpg"
+			                                        alt="books" title="Retratos">
 			</div>
-			<div class="cover3">
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv1.jpg" media="(max-width: 600px)" >
-		            <img   class="lazyload" data-src="Imagenes/EfectoBook/Iimgv1.jpg" alt="books" title="Retratos">
-			    </picture>
-		        <picture>
-				    <source srcset="Imagenes/EfectoBook/media/Iimgv2.jpg" media="(max-width: 600px)">
-		            <img  class="backInfant3 lazyload" data-src="Imagenes/EfectoBook/Iimgv2.jpg" alt="books" title="Retratos">
-			    </picture>
+			<div class="coverInfant3">
+		            <img   data-sizes="auto" class="lazyload" data-src="Imagenes/EfectoBook/Iimgv1.jpg" 
+						    alt="books" title="Retratos">
+		            <img  class="backInfant3 lazyload" data-src="Imagenes/EfectoBook/Iimgv2.jpg" 
+			                                        alt="books" title="Retratos">
 			</div>  
 					
        </div>
@@ -981,36 +923,15 @@
 		<a style="text-decoration: none; color: #505050" href="https://www.flaticon.es/autores/photo3idea-studio" target="_blank" title="photo3idea_studio">photo3idea_studio</a>
 		from <a style="text-decoration: none; color: #505050"href="https://www.flaticon.es/"  target="_blank" title="Flaticon">www.flaticon.es</a>
 	</div>
-		
+	<!-- <a href='htttps://.pngtree.com/so/elemento'>elemento png de pngtree.com</a> -->
 	
+
+
    </footer>
+
+	  
 <script src="scripts/lazysizes.min.js" async></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' async></script>
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js" ></script>
-<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js" ></script>
-<!-- Fin Firebase links -->
 <script src="scripts/cod.js" async></script>
-<script src="scripts/contacto.js" async></script>	
-		    	<!--librerias 360-->
-<script  src="scripts/sphoords.js" ></script>
-<script  src="scripts/photo-sphere-viewer.min.js" ></script>
-<script  src="scripts/three.min.js" ></script>
-        <script async>
-			// var div = document.getElementById('Imagen360');
-			// var PSV = new PhotoSphereViewer({
-			// 		panorama: 'https://edcas804.github.io/360/1.jpg',
-			// 		container: div,
-			// 		time_anim: 10,
-			// 		navbar: true,
-			// 		navbar_style: {
-			// 			backgroundColor: 'rgba(0,0,0, 0.3)',
-			// 			buttonsColor: '#fff',
-			// 			activeButtonsBackgroundColor: 'rgba(58, 67, 77, 0.6)'
-			// 		},
-			// 		buttonsHeight: '30',
-			// 		autorotateThickness: '0',
-					
-			// 	});
-		</script>
 </body>
 </html>

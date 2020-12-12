@@ -1,0 +1,23 @@
+{
+  "name": "alejacastanofotografia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w public/estilos -o public/estilos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alejacastanofotografia/home.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alejacastanofotografia/home/issues"
+  },
+  "homepage": "https://github.com/Alejacastanofotografia/home#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

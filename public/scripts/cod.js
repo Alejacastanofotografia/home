@@ -1,5 +1,5 @@
 var i;
-
+let l = console.log;
 
 function navegacion(evt, ventana, header, activeLink){
 	var ventanas = document.getElementsByClassName('ventanas');
@@ -38,23 +38,9 @@ function navegacion(evt, ventana, header, activeLink){
 		
 	}
 	
-	if(ventana === 'Admin'){
-		headM1[0].style.background = `var(--main-background-adminHeader)`;
-		headM1[0].style.borderBottom = 'none';
-		vent[1].style.display = 'none';	vent[2].style.display = 'none';	vent[3].style.display = 'none';	vent[4].style.display = 'none';}
-	else{
-		vent[1].style.display = 'block';	vent[2].style.display = 'block';	vent[3].style.display = 'block';	vent[4].style.display = 'block';
-		headM1[0].style.borderBottom =  '1px solid #202020';
-		// headM1[0].style.background = `var(--main-backgroundmenuHeader)`;
-	}
 }
 document.getElementById('defaultClick').click();
-// setTimeout(function(){
-	// document.getElementById('buttonAdmin').click();
-// }, 100);
-// setTimeout(function(){
-	// document.getElementById('navBooks').click();
-// }, 100);
+
 function cambiarVentana2(evt, ventanaNombre) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("Ventanas2");
@@ -107,10 +93,12 @@ window.onscroll = function(){
 } 
 function mostrarScroll(){
 	
-	scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+//	scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        scrollTop = window.pageYOffset;
 	for(var i = 0; i < contenedor.length; i++){
 		let alturaAnimado = contenedor[i].offsetTop;
-		if(alturaAnimado - 600 < scrollTop){
+	        console.log(alturaAnimado)
+		if(alturaAnimado -200 < scrollTop){
 			contenedor[i].classList.add("position");
 		}
 		else{
@@ -119,7 +107,7 @@ function mostrarScroll(){
 	}
 	for(var i = 0; i < contenedor2.length; i++){
 		let alturaAnimado = contenedor2[i].offsetTop;
-		if(alturaAnimado - 600 < scrollTop){
+		if(alturaAnimado - 100 < scrollTop){
 			contenedor2[i].classList.add("positionright");
 		}
 		else{
