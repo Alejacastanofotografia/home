@@ -16,8 +16,7 @@
 
 body {
   background: var(--black-color);
-  line-height: 1.8rem;
-  letter-spacing: .1rem; }
+  letter-spacing: .08rem; }
 
 html {
   scroll-behavior: smooth; }
@@ -30,7 +29,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   filter: grayscale(0%);
   box-shadow: 40px 50px 200px #000 inset;
   display: grid;
@@ -131,10 +130,10 @@ header {
 .contenedorBook {
   padding: 4rem 0 2rem 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 35% 1fr; }
-
+  grid-template-columns: 35% 1fr; 
+ }
 .booksContainer {
   position: relative;
   padding: 0 0 2rem 0;
@@ -151,6 +150,14 @@ header {
   flex-direction: column;
   align-items: center; }
 
+.titulos{
+    color: var(--white-color);
+    text-align: center;
+}  
+.parrafos {
+    color: var(--white-color);
+    text-align: center;
+}
 table {
   color: #fff;
   margin: 8px auto;
