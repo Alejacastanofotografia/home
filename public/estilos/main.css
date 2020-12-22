@@ -12,7 +12,8 @@
   --font-s-small: .8rem;
   --font-s-medium: 1rem;
   --font-s-large: 1.3rem;
-  --font-s-extraLarge: 5rem; }
+  --font-s-extraLarge: 5rem;
+  --letter-spacing: .08rem; }
 
 @media (max-width: 1000px) {
   :root {
@@ -315,19 +316,20 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%; }
+  width: 100%;
+  letter-spacing: var(--letter-spacing); }
 
 .contacto form input, .contacto form textarea {
   width: 100%;
   padding: .8rem;
-  border-radius: .7rem;
-  margin: .3rem;
+  margin: .8rem;
   background: none;
+  border: none;
   outline: none;
-  border: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
   transition: .5s;
-  font-size: var(--font-s-medium);
-  color: var(--white-color); }
+  color: var(--white-color);
+  font-size: var(--font-s-large); }
 
 .contacto form input:focus, .contacto form input:hover, .contacto form textarea:focus, .contacto form textarea:hover {
   border-bottom: 1px solid var(--light-color); }
@@ -336,9 +338,14 @@
   .contacto form input, .contacto form textarea {
     width: 90%; } }
 
+.contacto form input::placeholder, .contacto form textarea::placeholder {
+  font-size: var(--font-s-large); }
+
 .contacto form h3 {
   margin: 1rem;
-  color: var(--white-color); }
+  color: var(--white-color);
+  text-align: center;
+  font-size: var(--font-s-large); }
 
 .contacto form p {
   margin: 0 0 1rem 0;

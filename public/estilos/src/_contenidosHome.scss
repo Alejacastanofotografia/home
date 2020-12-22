@@ -6,12 +6,19 @@
         max-width: 480px;
 	@include flexCenterCol;
         width: 100%; 
+	letter-spacing: var(--letter-spacing);
 	input, textarea{
 	    @include input;
+            font-size: var(--font-s-large);
+        &::placeholder{
+            font-size: var(--font-s-large);
+	}
 	}
         h3{
 	    margin: 1rem;
            color: var(--white-color); 
+	   text-align: center;
+	   font-size: var(--font-s-large);
         }
         p{
 	    margin: 0 0 1rem 0;

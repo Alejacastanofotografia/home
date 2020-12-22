@@ -16,6 +16,7 @@
     --font-s-medium: 1rem;
     --font-s-large: 1.3rem;
     --font-s-extraLarge: 5rem;
+    --letter-spacing: .08rem;
 }
 
 @media (max-width: 1000px) {
@@ -77,13 +78,12 @@
 @mixin input {
     width: 100%;
     padding: .8rem;
-    border-radius: .7rem;
-    margin: .3rem;
+    margin: .8rem;
     background: none;
+    border: none;
     outline: none;
-    border: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
     transition: .5s;
-    font-size: var(--font-s-medium);
     color: var(--white-color);
     &:focus, &:hover{
 	border-bottom: 1px solid var(--light-color);
